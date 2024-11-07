@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1250</width>
+    <height>661</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Triangulation</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>resources/icon.ico</normaloff>resources/icon.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1920</width>
+     <height>1080</height>
+    </size>
+   </property>
+   <property name="sizeIncrement">
+    <size>
+     <width>2</width>
+     <height>2</height>
+    </size>
+   </property>
+   <property name="baseSize">
+    <size>
+     <width>1920</width>
+     <height>1080</height>
+    </size>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="locale">
+    <locale language="Russian" country="Russia"/>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="ShVizualization" name="widget" native="true"/>
+    </item>
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Степень аппроксимации</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Номер контура</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="NumbContour">
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>1</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="Shredding">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>130</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+   border: 1px solid gray;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}</string>
+        </property>
+        <property name="text">
+         <string>Измельчение</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="Triangulation">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>130</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+   border: 1px solid gray;
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}</string>
+        </property>
+        <property name="text">
+         <string>Триангуляция</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="3">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Отображать все контуры</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBox_2">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Алгоритм триануляция невыпуклой области</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox">
+          <item>
+           <property name="text">
+            <string>Алогритм &quot;Отрезание ушей&quot; без доп. точек</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Триангуляция Делоне с ограничениями &quot;Удаляй-и-строй&quot;</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>Степень измельчения</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="spinBox"/>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBox">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>130</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>Отображать контур</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="3">
+       <widget class="QLabel" name="numtriang">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  qproperty-alignment: 'AlignVCenter | AlignRight';
+  border: 1px solid gray;
+}
+
+background-color : white;</string>
+        </property>
+        <property name="text">
+         <string>Количество треугольников: 0</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1250</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Меню</string>
+    </property>
+    <addaction name="find_countour"/>
+    <addaction name="action"/>
+    <addaction name="action_2"/>
+    <addaction name="actionOneAreaTriang"/>
+    <addaction name="actionSvg_save"/>
+    <addaction name="actionCany"/>
+    <addaction name="actionTesttriangCanny"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="find_countour"/>
+   <addaction name="action_zoom_in"/>
+   <addaction name="action_zoom_out"/>
+   <addaction name="shift_up_y"/>
+   <addaction name="actionshift_down_y"/>
+   <addaction name="shift_left"/>
+   <addaction name="shift_right"/>
+   <addaction name="Save"/>
+  </widget>
+  <action name="find_countour">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/Image/resources/Font-Tonicons/SVG/Folder-2.svg</normaloff>:/Image/resources/Font-Tonicons/SVG/Folder-2.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Загрузить контур</string>
+   </property>
+  </action>
+  <action name="action_zoom_in">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/Image/resources/Font-Tonicons/SVG/Zoom In.svg</normaloff>:/Image/resources/Font-Tonicons/SVG/Zoom In.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Приблизить</string>
+   </property>
+  </action>
+  <action name="action_zoom_out">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/Image/resources/Font-Tonicons/SVG/Zoom Out.svg</normaloff>:/Image/resources/Font-Tonicons/SVG/Zoom Out.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Отдалить</string>
+   </property>
+  </action>
+  <action name="shift_up_y">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/Image/resources/Font-Tonicons/SVG/arrow-up-thick.svg</normaloff>:/Image/resources/Font-Tonicons/SVG/arrow-up-thick.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Сдвиг вверх</string>
+   </property>
+  </action>
+  <action name="actionshift_down_y">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/Image/resources/Font-Tonicons/SVG/arrow-down-thick.svg</normaloff>:/Image/resources/Font-Tonicons/SVG/arrow-down-thick.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Сдвиг вниз</string>
+   </property>
+  </action>
+  <action name="shift_left">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/Image/resources/Font-Tonicons/SVG/arrow-left-thick.svg</normaloff>:/Image/resources/Font-Tonicons/SVG/arrow-left-thick.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Сдвиг влево</string>
+   </property>
+  </action>
+  <action name="shift_right">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/Image/resources/Font-Tonicons/SVG/arrow-right-thick.svg</normaloff>:/Image/resources/Font-Tonicons/SVG/arrow-right-thick.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Сдвиг вправо</string>
+   </property>
+  </action>
+  <action name="Save">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/Image/resources/Font-Tonicons/SVG/Inbox-1.svg</normaloff>:/Image/resources/Font-Tonicons/SVG/Inbox-1.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Сохранить</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>Триангуляция</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>Сохранение новой картинки</string>
+   </property>
+  </action>
+  <action name="actionOneAreaTriang">
+   <property name="text">
+    <string>OneAreaTriang</string>
+   </property>
+  </action>
+  <action name="actionSvg_save">
+   <property name="text">
+    <string>Svg save</string>
+   </property>
+  </action>
+  <action name="actionCany">
+   <property name="text">
+    <string>Cany </string>
+   </property>
+  </action>
+  <action name="actionTesttriangCanny">
+   <property name="text">
+    <string>TesttriangCanny</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ShVizualization</class>
+   <extends>QWidget</extends>
+   <header>shvizualization.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
